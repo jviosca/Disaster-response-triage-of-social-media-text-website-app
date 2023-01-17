@@ -14,9 +14,9 @@ A quick demo:
 
 ## Installation <a name="installation"></a>
 
-To run the app you can either visit the [website](url) where it is deployed or run it locally in your computer.
+The app is not deployed in any cloud service provider but you can run it locally in your computer.
 
-To run the app locally, you need python 3 and the following python modules installed: flask, plotly, nltk, sklearn, json, pandas, joblib, sqlalchemy, sys, sqlite3, re and pickle.
+To run the app locally, you need python 3 and the following python modules installed: flask (2.2.2), plotly (5.9.0), nltk (3.7), scikit-learn (1.0.2), json, pandas (1.4.4), joblib (1.1.1), sqlalchemy (1.4.39), sys, sqlite3, re and pickle.
 
 Once these modules are installed and the repository is cloned, to launch the app navigate to the directory called 'app' and run: `python run.py`. This will launch the Flask app and the terminal will show the url where it can be visited (typically [0.0.0.0:3001](http://0.0.0.0:3001/) or perhaps [127.0.0.1:3001](http://127.0.0.1:3001/))
 

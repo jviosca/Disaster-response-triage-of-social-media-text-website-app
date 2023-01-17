@@ -52,5 +52,27 @@ The 'app' directory contains the html and Flask app ('run.py') files.
 
 ## Results<a name="results"></a>
 
+The website app deploys in its frontpage the distribution of post messages across categories in the dataset used to train the classifier model. When a message is assigned to a category, the value of such category column for that message is 1. Otherwise it is 0. Thus, as shown below, for many of the 36 labeling categories, the labeling is mostly negative and happens in less than 5K post messages (total number of posts = 27K), meaning class imbalance is pervasive in the training dataset:
+![post-category-count](img/post_count_categories.png)
+
+During model tuning and evaluation I found the best classification performance was obtained with a Logistic Regression model with class_weight set to balanced, which assigns class weights inversely proportional to their respective frequencies. I also tested a Random Forests model and a Multinomial Naive Bayes model. The overal classification results are:
+| Parameter | Multinomial Naive Bayes | Random Forests | Logistic regression | 
+|--------------------------------------------------------|--|--|--|
+| Precision (average of macro averages for all labels)   | 0.67 | 0.79 | 0.68 |
+| Recall (average of macro averages for all labels)      | 0.59 | 0.59 | 0.76 | 
+| F1 score (average of macro averages for all labels)    | 0.61 | 0.61 | 0.70 |
+| Accuracy (average of weighted averages for all labels) | 0.93 | 0.95 | 0.93 |
+
+In conclusion, we consistently see across models a relatively high accuracy and low recall, due to high class imbalance across many labels. We also see that Multimnomial Naive Bayes performs the worst for all the 4 parameters. If we want to maximize precision, we should take the Random Forests classifier. If we want to maximize recall, we should go for the Logistic Regression model. If, as said before, we want to maximize a balance between precision and recall, we would choose the highest F1 score and thus also go for the Logistic Regression classifier, which is the one that has been used in deployment in the 'train_classifier.py' script. The drawback with the Logistic Regression model is that, given its low overall precision (0.68), it will yield a relatively high amount of false positives (i.e. it will incorrectly label input messages assigning them to categories that do not really correspond), however, at least, it will catch most of the true positive rescue enquiry messages given its relatively high overall recall (0.76).
+
+Below some visualizations of the 5 most frequent words found in the training dataset for a selection of labeling categories:
+[Top words: 'Related'](img/top-words_related.jpg)
+[Top words: 'Aid related'](img/top-words_aid-related.jpg)
+[Top words: 'Shelter'](img/top-words_shelter.jpg)
+[Top words: 'Missing people'](img/top-words_missing-people.jpg)
+[Top words: 'Medical help'](img/top-words_medical-help.jpg)
+
+For more details, see notebook called 'ML pipeline preparation'.
+
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
-See the License file. The author is Jose Viosca Ros who thanks Udacity for their support and guidance throughgout the Data Scientist nanodegree.
+See the [License file](LICENSE). The author is Jose Viosca Ros who thanks Udacity for their support and guidance throughgout the Data Scientist nanodegree.

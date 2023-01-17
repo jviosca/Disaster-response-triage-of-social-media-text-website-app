@@ -22,9 +22,9 @@ Once these modules are installed and the repository is cloned, to launch the app
 
 If you need to re-build the database and train the classifier model, then run the following commands in the project's root directory. Please note that training the model is time-consuming (2-3 hours):
 
-- To run the Extract-Transform-Load pipeline that cleans data and stores it in a database called 'DisasterResponse.db':
+- To run the Extract-Transform-Load pipeline that cleans data and stores it in a database called 'DisasterResponse.db' (you can give an alternative name for the database by typing your preferred name as the 4th argument in this command):
     `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-- To run a Machine Learning pipeline that trains the classifier and saves the trained model as a Pickle file:
+- To run a Machine Learning pipeline that trains the classifier and saves the trained model as a Pickle file named 'classifier.pkl' (again, you can type your preferred name here. Also, if you changed the name of the exported database in the command above, use it here):
     `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 ## Project Motivation<a name="motivation"></a>

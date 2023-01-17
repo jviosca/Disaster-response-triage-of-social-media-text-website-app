@@ -74,7 +74,7 @@ Below some visualizations of the 5 most frequent words found in the training dat
 ![Top words: 'Missing people'](img/top-words_missing-people.jpg)
 ![Top words: 'Medical help'](img/top-words_medical-help.jpg)
 
-For more details, see notebook called 'ML pipeline preparation'.
+For more details, see notebook called 'ML pipeline preparation' or the classification report that is printed to the terminal by the 'train_classifier.py' script.
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 See the [License file](LICENSE). The author is Jose Viosca Ros who thanks Udacity for their support and guidance throughgout the Data Scientist nanodegree.

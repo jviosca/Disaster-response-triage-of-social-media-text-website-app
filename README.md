@@ -1,5 +1,8 @@
 # Disaster Response Pipeline Project
-This project builds a website app that deploys a Natural Language Processing pipeline and a classification pipeline. The app has a text input box where one can type a text message. Once submitted, the app analyzes the input text and, in a fraction of a second, it returns a labelling binary output (yes/no) for 36 request categories potentially relevant to disaster response management (i.e medical aid, food, water, shelter, fire, etc).
+This project builds a website app that deploys a Natural Language Processing pipeline and a classification pipeline. The app has a text input box where one can type a text message. Once submitted, the app analyzes the input text and, in a fraction of a second, it returns a labelling binary output (yes/no, a green shadow = yes) for 36 request categories potentially relevant to disaster response management (i.e medical aid, food, water, shelter, fire, etc).
+
+A quick demo:
+![Disaster Response Pipeline Demo](img/demo.gif)
 
 ### Table of Contents
 

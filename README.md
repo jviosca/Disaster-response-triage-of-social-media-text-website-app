@@ -38,10 +38,12 @@ The directory called 'data' contains the dataset and scripts/files related with 
 - 2 csv files ('disaster_messages.csv' and 'disaster_categories.csv') that contain +27.000 social media text posts. This is the raw dataset that needs to be wrangled and processed to become ready to train the classifier (see below).
 - A ETL pipeline python script ('process_data.py')
 - The database with cleaned data that results from running the ETL pipeline ('DisasterResponse.db' or any other name typed when running the ETL pipeline from terminal as explained above)
+- A jupyter notebook ('ETL pipeline preparation') showing an initial exploratory data analysis and explaining the data wrangling/cleaning process
 
 The 'models' directory contains files and scripts related with building the machine learning classifier model, its training and evaluation:
 - The machine learning pipeline script ('train_classifier') loads the data from the database ('DisasterResponse.db' or other name given when ruynning the ML pipeline from terminal, see above), builds and trains a classifier model, exports the trained model as a Pickle file named 'classifier.pkl' (or other name given in the terminal, as pointed above) and prints in the terminal the classification report for each category and each class including its precision, recall, f1-score and accuracy.
 - The pickle file with the trained classifier model ('classifier.pkl' or other name given in the terminal when running the ML pipeline, see above)
+- A jupyter notebook ('ML pipeline preparation') explaining the Natural Language Processing and model building, training, tuning and evaluation
 
 The 'app' directory contains the html and Flask app ('run.py') files.
 

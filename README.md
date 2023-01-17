@@ -57,7 +57,7 @@ The dataset provided by Figure Eight contains +27000 messages drawn from events 
 The website app deploys in its frontpage the distribution of post messages across categories in the dataset used to train the classifier model. When a message is assigned to a category, the value of such category column for that message is 1. Otherwise it is 0. Thus, as shown below, for many of the 36 labeling categories, the labeling is mostly negative and happens in less than 5K post messages (total number of posts = 27K), meaning class imbalance is pervasive in the training dataset:
 ![post-category-count](img/post_count_categories.png)
 
-During model tuning and evaluation I found the best classification performance was obtained with a Logistic Regression model with class_weight set to balanced, which assigns class weights inversely proportional to their respective frequencies. I also tested a Random Forests model and a Multinomial Naive Bayes model. The overal classification results are:
+During model tuning and evaluation I found the best classification performance was obtained with a Logistic Regression model with class_weight set to balanced, which assigns class weights inversely proportional to their respective frequencies. I also tested a Random Forests model and a Multinomial Naive Bayes model. The overal classification results are (please note, concerning terminology, that 'categories' = 'labels' = 'labelling categories'):
 | Parameter | Multinomial Naive Bayes | Random Forests | Logistic regression | 
 |--------------------------------------------------------|--|--|--|
 | Precision (average of macro averages for all labels)   | 0.67 | 0.79 | 0.68 |

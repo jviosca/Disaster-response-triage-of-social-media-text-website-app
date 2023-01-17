@@ -52,6 +52,8 @@ The 'app' directory contains the html and Flask app ('run.py') files.
 
 ## Results<a name="results"></a>
 
+The dataset provided by Figure Eight contains +27000 messages drawn from events including an earthquake in Haiti in 2010, an earthquake in Chile in 2010, floods in Pakistan in 2010, superstorm Sandy in the U.S.A. in 2012, and news articles spanning a large number of years and 100s of different disasters. The messages have been classified in 36 different categories related to disaster response and they have been stripped of sensitive informations in their entirety. A translation from the original language to english has also been provided.
+
 The website app deploys in its frontpage the distribution of post messages across categories in the dataset used to train the classifier model. When a message is assigned to a category, the value of such category column for that message is 1. Otherwise it is 0. Thus, as shown below, for many of the 36 labeling categories, the labeling is mostly negative and happens in less than 5K post messages (total number of posts = 27K), meaning class imbalance is pervasive in the training dataset:
 ![post-category-count](img/post_count_categories.png)
 

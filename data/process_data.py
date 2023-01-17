@@ -32,7 +32,7 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
-    """ Function to remove duplicates and useless columns in dataframe resulting from function 'load_data()'
+    """ Function to remove duplicates, useless columns and convert all categories to binary in dataframe resulting from function 'load_data()'
     
     Args:
         Dataframe (df)
@@ -44,6 +44,8 @@ def clean_data(df):
     df.drop_duplicates(subset=['message'], inplace=True)
     # Remove column 'child_alone' which does not reflect its intended meaning
     df.drop(columns=['child_alone'], inplace = True)
+    # Remove value=2 from category 'related' to have all binary categories
+    df = df.loc[df['related']!=2]
     return df
 
 def save_data(df, database_filename):

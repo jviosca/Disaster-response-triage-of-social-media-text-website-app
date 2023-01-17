@@ -21,7 +21,6 @@ import pickle
 
 def load_data(database_filepath):
     """ Function to get data from a database and extract feature (X) and target (y) variables. 
-    It performs a step of data preparation to have pure binary multioutput classification, removing class = 2 in column 'related'.
     It also extracts category names from the dataset
     
     Args:
@@ -33,7 +32,6 @@ def load_data(database_filepath):
     """
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql('select * from messages_w_categories', engine)
-    df = df.loc[df['related']!=2] # remove messages with 'related' value = 2 (all categories should have a value of either 0 or 1)
     X = df['message']
     y = df.drop(columns=['message','original','genre'])
     category_names = y.columns.values.tolist()

@@ -68,11 +68,11 @@ During model tuning and evaluation I found the best classification performance w
 In conclusion, we consistently see across models a relatively high accuracy and low recall, due to high class imbalance across many labels. We also see that Multimnomial Naive Bayes performs the worst for all the 4 parameters. If we want to maximize precision, we should take the Random Forests classifier. If we want to maximize recall, we should go for the Logistic Regression model. If, as said before, we want to maximize a balance between precision and recall, we would choose the highest F1 score and thus also go for the Logistic Regression classifier, which is the one that has been used in deployment in the 'train_classifier.py' script. The drawback with the Logistic Regression model is that, given its low overall precision (0.68), it will yield a relatively high amount of false positives (i.e. it will incorrectly label input messages assigning them to categories that do not really correspond), however, at least, it will catch most of the true positive rescue enquiry messages given its relatively high overall recall (0.76).
 
 Below some visualizations of the 5 most frequent words found in the training dataset for a selection of labeling categories:
-[Top words: 'Related'](img/top-words_related.jpg)
-[Top words: 'Aid related'](img/top-words_aid-related.jpg)
-[Top words: 'Shelter'](img/top-words_shelter.jpg)
-[Top words: 'Missing people'](img/top-words_missing-people.jpg)
-[Top words: 'Medical help'](img/top-words_medical-help.jpg)
+![Top words: 'Related'](img/top-words_related.jpg)
+![Top words: 'Aid related'](img/top-words_aid-related.jpg)
+![Top words: 'Shelter'](img/top-words_shelter.jpg)
+![Top words: 'Missing people'](img/top-words_missing-people.jpg)
+![Top words: 'Medical help'](img/top-words_medical-help.jpg)
 
 For more details, see notebook called 'ML pipeline preparation'.
 

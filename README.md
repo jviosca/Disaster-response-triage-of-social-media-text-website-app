@@ -1,16 +1,28 @@
 # Disaster Response Pipeline Project
-This project builds a website app that deploys a Natural Language Processing pipeline and a classification pipeline. The app has a text input box where one can type a text message. Once submitted, the app analyzes the input text and, in a fraction of a second, it returns a labelling binary output (yes/no, a green shadow = yes) for 36 request categories potentially relevant to disaster response management (i.e medical aid, food, water, shelter, fire, etc).
+A website app that performs multi-label classification into 36 categories of user-entered input text. Once the input text is entered and the 'Classify Message' button is clicked, the app yields a classification report of the input text for 36 categories related with disaster-response management  (i.e medical aid, food, water, shelter, fire, etc). For each category, the classification output is binary and color-coded: a green shadow in the category text box means the input text is positive for such category.
+
+The app is a Flask app that deploys a Natural Language Processing pipeline and a Logistic regression classifier pipeline.
 
 A quick demo:
 ![Disaster Response Pipeline Demo](img/demo.gif)
 
 ### Table of Contents
 
-1. [Installation](#installation)
-2. [Project Motivation](#motivation)
+1. [Project Motivation](#motivation)
+2. [Installation](#installation)
 3. [File Descriptions](#files)
 4. [Results](#results)
 5. [Licensing, Authors, and Acknowledgements](#licensing)
+
+## Project Motivation<a name="motivation"></a>
+
+The aim of the project is to showcase a classifier that quickly tags input text messages into 1 or more (up 36) categories. It operates on user-entered text, but it could be adapted to analyze social media posts text with the aim to identify posts coming from people needing humanitarian aid during catastrophes such as earthquakes, floods or other types of disasters. 
+
+The rationale is that, since conventional aid-requesting channels (telephone or texting) become quickly saturated during disasters given the huge amount of requests, an automated an efficient text classifier that quickly analyzes social media posts to identify real disaster-related aid requests would be greatly helpful.
+
+The idea is to classify each input post text as to know to what various categories it can relate so to quickly connect the post message with specialized organizations or response agents (i.e. NGOs providing medical assistance or other types of aid, bombers, etc).
+
+This project is the practical assignment of Udacity's Data Scientist nanodegree 'Data Engineering' course. 
 
 ## Installation <a name="installation"></a>
 
@@ -26,12 +38,6 @@ If you need to re-build the database and train the classifier model, then run th
     `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
 - To run a Machine Learning pipeline that trains the classifier and saves the trained model as a Pickle file named 'classifier.pkl' (again, you can type your preferred name here. Also, if you changed the name of the exported database in the command above, use it here):
     `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
-
-## Project Motivation<a name="motivation"></a>
-
-The aim of the project is to build a classifier that quickly tags input text messages from social media posts into 36 possible categories to identify posts coming from people needing humanitarian aid during catastrophes such as earthquakes or others. The aim is to classify each input post text as to know to what various categories it can relate so to quickly connect the post message with particular organizations or response agents (i.e. NGOs providing medical assistance or other types of aid).
-
-This project is the practical assignment of Udacity's Data Scientist nanodegree 'Data Engineering' course. 
 
 ## File Descriptions <a name="files"></a>
 
